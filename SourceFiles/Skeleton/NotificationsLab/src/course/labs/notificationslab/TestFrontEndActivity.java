@@ -30,7 +30,6 @@ public class TestFrontEndActivity extends Activity {
 		Button ageTweetsButton = (Button) findViewById(R.id.age_tweets_button);
 		ageTweetsButton.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				setFileAge(DAWN_OF_TIME);
 			}
@@ -40,7 +39,6 @@ public class TestFrontEndActivity extends Activity {
 		Button rejuvTweetsButton = (Button) findViewById(R.id.rejuv_tweets_button);
 		rejuvTweetsButton.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				setFileAge(System.currentTimeMillis());
 			}
@@ -50,7 +48,6 @@ public class TestFrontEndActivity extends Activity {
 		Button startMainActivityButton = (Button) findViewById(R.id.start_main_button);
 		startMainActivityButton.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(TestFrontEndActivity.this,
 						MainActivity.class));
