@@ -91,7 +91,7 @@ public class MainActivity extends Activity implements SelectionListener {
 			
 			// TODO:
 			// Start new AsyncTask to download Tweets from network
-			new DownloaderTask(this).execute(URL_LGAGA, URL_RBLACK, URL_TSWIFT);
+			new DownloaderTask(this).execute(URL_TSWIFT, URL_RBLACK, URL_LGAGA);
 
 
 			
@@ -182,7 +182,9 @@ public class MainActivity extends Activity implements SelectionListener {
 		// TODO:
 		// Register the BroadcastReceiver to receive a 
 		// DATA_REFRESHED_ACTION broadcast
-		registerReceiver(mRefreshReceiver, new IntentFilter(DATA_REFRESHED_ACTION));
+		if (mRefreshReceiver != null) {
+			registerReceiver(mRefreshReceiver, new IntentFilter(DATA_REFRESHED_ACTION));
+		}
 
 		
 	}
@@ -192,7 +194,9 @@ public class MainActivity extends Activity implements SelectionListener {
 
 		// TODO:
 		// Unregister the BroadcastReceiver
-		unregisterReceiver(mRefreshReceiver);
+		if (mRefreshReceiver != null) {
+			unregisterReceiver(mRefreshReceiver);
+		}
 
 		
 		
